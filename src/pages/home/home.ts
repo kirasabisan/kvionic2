@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
     private dishservice: DishProvider,
     private promotionservice: PromotionProvider,
     private leaderservice: LeaderProvider,
-    @Inject('BaseURL') private BaseURL) { }
+    @Inject('BaseURL') public BaseURL) { }
 
   ngOnInit() {
     this.dishservice.getFeaturedDish()

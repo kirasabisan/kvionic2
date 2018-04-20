@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
-import { baseURL } from '../shared/baseurl';
+import { baseURL } from '../shared/baseurl'
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
+import { DishdetailPage } from '../pages/dishdetail/dishdetail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
     HomePage,
     AboutPage,
     MenuPage,
-    ContactPage
+    ContactPage,
+    DishdetailPage,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
     HomePage,
     AboutPage,
     MenuPage,
-    ContactPage
+    ContactPage,
+    DishdetailPage,
   ],
   providers: [
     StatusBar,
@@ -45,7 +48,8 @@ import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-htt
     DishProvider,
     LeaderProvider,
     PromotionProvider,
-    ProcessHttpmsgProvider
+    ProcessHttpmsgProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 export class AppModule {}

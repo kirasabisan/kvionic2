@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Promotion } from '../../shared/promotion';
 import { Observable } from 'rxjs/Observable';
