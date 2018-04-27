@@ -4,12 +4,6 @@ import { Dish } from '../../shared/dish';
 import { Comment } from '../../shared/comment';
 import { FavoriteProvider } from '../../providers/favorite/favorite';
 
-/**
- * Generated class for the DishdetailPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-dishdetail',
@@ -26,7 +20,7 @@ export class DishdetailPage {
     @Inject('BaseURL') public BaseURL,
     private favoriteservice: FavoriteProvider) {
     this.dish = navParams.get('dish');
-    this.favorite = favoriteservice.isFavorite(this.dish.id); {
+    this.favorite = favoriteservice.isFavorite(this.dish.id);
     this.numcomments = this.dish.comments.length;
 
     let total = 0;
@@ -42,5 +36,5 @@ export class DishdetailPage {
     this.favorite = this.favoriteservice.addFavorite(this.dish.id);
 
     }
-  }
-}
+  
+
