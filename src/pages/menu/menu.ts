@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
 import { DishProvider } from '../../providers/dish/dish';
-import { DishdetailPage } from '../dishdetail/dishdetail';
+import { DishDetailPage } from '../dishdetail/dishdetail';
 import { FavoriteProvider } from '../../providers/favorite/favorite';
 
 
@@ -39,7 +39,7 @@ export class MenuPage implements OnInit {
 
   dishSelected(event, dish) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(DishdetailPage, {
+    this.navCtrl.push(DishDetailPage, {
       dish: dish
     });
   }

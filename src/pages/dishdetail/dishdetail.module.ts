@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { DishdetailPage } from './dishdetail';
+import { DishDetailPage } from './dishdetail';
 
 @NgModule({
   declarations: [
-    DishdetailPage,
+    DishDetailPage,
   ],
   imports: [
-    IonicPageModule.forChild(DishdetailPage),
+    IonicPageModule.forChild(DishDetailPage),
   ],
 })
 export class DishdetailPageModule {}
