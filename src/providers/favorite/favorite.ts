@@ -55,6 +55,7 @@ export class FavoriteProvider {
    let index = this.favorites.indexOf(id);
    if (index >= 0) {
     this.favorites.splice(index, 1);
+    this.storage.set('favorites', this.favorites);
     return this.getFavorites();
    }
    else {
