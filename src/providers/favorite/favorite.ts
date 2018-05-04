@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { Dish } from '../../shared/dish';
 import { Observable } from 'rxjs/Observable';
 import { DishProvider } from '../dish/dish';
+import { Storage } from '@ionic/storage';
 import 'rxjs/add/operator/map';
 
 /*
@@ -17,14 +18,17 @@ export class FavoriteProvider {
   favorites: Array<any>;
 
   constructor(public http: Http,
-    public dishservice: DishProvider) {
+    public dishservice: DishProvider,
+    public storage: Storage ) {
     console.log('Hello FavoriteProvider Provider');
     this.favorites = [];
   }
 
   addFavorite(id: number): boolean {
-    if (!this.isFavorite(id))
-    this.favorites.push(id);
+    if (!this.isFavorite(id)) {
+      this.favorites.push(id)
+      this.storage.set('favorites', this.favorites);
+    }
     console.log('favorites', this.favorites);
     return true;
  }
@@ -34,6 +38,15 @@ export class FavoriteProvider {
  }
 
  getFavorites(): Observable<Dish[]> {
+  this.storage.get('favorites').then(favorites => {
+  if (favorites) {
+    this.favorites = favorites;
+    console.log('getFavorites ' + favorites);
+  }
+  else {
+    console.log('favorites not defined');
+  }
+  });
   return this.dishservice.getDishes()
   .map(dishes => dishes.filter(dish => this.favorites.some(el => el === dish.id)));
  }
