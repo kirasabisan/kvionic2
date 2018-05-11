@@ -23,6 +23,9 @@ import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
 import { FavoriteProvider } from '../providers/favorite/favorite';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { EmailComposer } from '@ionic-native/email-composer';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,9 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ProcessHttpmsgProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     FavoriteProvider,
+    LocalNotifications,
+    EmailComposer,
+    SocialSharing
   ]
 })
 export class AppModule {}
